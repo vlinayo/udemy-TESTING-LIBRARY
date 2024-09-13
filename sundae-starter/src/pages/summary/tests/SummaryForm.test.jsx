@@ -60,7 +60,4 @@ test('checkbox and button confirmation flow', async () => {
     await user.unhover(termsAndConditions);
     expect(popover).not.toBeInTheDocument();
 
-
-
-
  })
