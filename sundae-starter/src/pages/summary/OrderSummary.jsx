@@ -1,7 +1,7 @@
-import React from 'react'
-
-export default function OrderSummary() {
+function OrderSummary() {
   return (
     <div>OrderSummary</div>
   )
 }
+
+export default OrderSummary
