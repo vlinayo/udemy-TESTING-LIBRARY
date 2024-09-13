@@ -1,7 +1,10 @@
-const OrderEntry = () => {
-  return (
-    <div>OrderEntry</div>
-  )
-}
+import Options from "./Options";
 
-export default OrderEntry
+export default function OrderEntry() {
+  return (
+    <div>
+      <Options optionType="scoops" />
+      <Options optionType="toppings" />
+    </div>
+  );
+}
