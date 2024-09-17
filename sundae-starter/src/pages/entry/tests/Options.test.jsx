@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Options from "../Options";
 
-test.skip("displays image for each scoop option from server", async () => {
+test("displays image for each scoop option from server", async () => {
   render(<Options optionType="scoops" />);
 
   // find images
