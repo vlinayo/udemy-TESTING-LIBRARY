@@ -15,10 +15,21 @@ export default function Options({ optionType }) {
 
   // optionType is 'scoops' or 'toppings
   useEffect(() => {
+    //if you find the "Not wrapped in act()..." error warning message...
+    const controller = new AbortController();
+
     axios
-      .get(`http://localhost:3030/${optionType}`)
+      .get(`http://localhost:3030/${optionType}`, {signal: controller.signal})
       .then((response) => setItems(response.data))
-      .catch((error) => setError(true));
+      .catch((error) => {
+        if(error.name !== "CanceledError") setError(true)
+      });
+
+      //cleanup for the controller needed
+      return () => {
+        controller.abort();
+      }
+
   }, [optionType]);
 
   if (error) {
