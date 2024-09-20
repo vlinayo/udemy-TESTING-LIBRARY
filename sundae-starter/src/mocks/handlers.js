@@ -14,4 +14,9 @@ export const handlers = [
       { name: "Hot fudge", imagePath: "/images/hot-fudge.png" },
     ]);
   }),
+  http.post('http://localhost:3030/order', async () => {
+    await delay(400);
+    const orderNumber = Math.floor(Math.random() * 10000000000);
+    return HttpResponse.json({ orderNumber }, { status: 201 });
+  })
 ];

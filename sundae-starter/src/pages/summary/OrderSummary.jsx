@@ -28,12 +28,18 @@ export default function OrderSummary({ setOrderPhase }) {
     );
   }
 
+  const getTotal = () => {
+    const totalSummary = totals.scoops + totals.toppings;
+    return totalSummary;
+  }
+
   return (
     <div>
       <h1>Order Summary</h1>
       <h2>Scoops: {formatCurrency(totals.scoops)}</h2>
       <ul>{scoopList}</ul>
       {toppingsDisplay}
+      <h2>Total: {formatCurrency(getTotal())}</h2>
       <SummaryForm setOrderPhase={setOrderPhase} />
     </div>
   );
