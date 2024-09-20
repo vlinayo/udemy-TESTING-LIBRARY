@@ -13,7 +13,7 @@ function App() {
       <OrderDetailsProvider>
         {orderPhase === "inProgress" && <OrderEntry setOrderPhase={setOrderPhase}/>}
         {orderPhase === "review" && <OrderSummary setOrderPhase={setOrderPhase}/>}
-        {orderPhase === "complete" && <OrderConfirmation setOrderPhase={setOrderPhase}/>}
+        {orderPhase === "completed" && <OrderConfirmation setOrderPhase={setOrderPhase}/>}
       </OrderDetailsProvider>
     </Container>
   );

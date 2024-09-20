@@ -1,4 +1,4 @@
-import { http, HttpResponse } from "msw";
+import { http, delay, HttpResponse } from "msw";
 
 export const handlers = [
   http.get('http://localhost:3030/scoops', () => {
@@ -14,9 +14,9 @@ export const handlers = [
       { name: "Hot fudge", imagePath: "/images/hot-fudge.png" },
     ]);
   }),
-  http.post('http://localhost:3030/order', async () => {
+  http.post("http://localhost:3030/order", async () => {
     await delay(400);
     const orderNumber = Math.floor(Math.random() * 10000000000);
-    return HttpResponse.json({ orderNumber }, { status: 201 });
+    return HttpResponse.json({ orderNumber: orderNumber }, { status: 201 });
   })
 ];
